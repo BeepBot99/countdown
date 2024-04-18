@@ -11,6 +11,13 @@
     </head>
     <body>
         <section class="hero is-fullheight is-primary">
+            <header class="hero-head">
+                <div class="block is-hidden-tablet">
+                    <h1 id="heading-mobile" class="title is-skeleton">
+                        Countdown until the New Year
+                    </h1>
+                </div>
+            </header>
             <main class="hero-body">
                 <div class="container has-text-centered is-max-desktop">
                     <div class="box has-background-primary-soft has-text-primary-bold">
@@ -47,9 +54,11 @@
         <script>
             setTimeout(() => {
                 document.getElementById("heading").classList.add("has-text-primary-bold");
+                document.getElementById("heading-mobile").classList.add("has-text-primary-bold");
                 document.getElementById("countdown-text").classList.add("has-text-primary-bold");
                 document.getElementById("countdown-text-mobile").classList.add("has-text-primary-bold");
                 document.getElementById("heading").classList.remove("is-skeleton");
+                document.getElementById("heading-mobile").classList.remove("is-skeleton");
                 document.getElementById("countdown-text").classList.remove("is-skeleton");
                 document.getElementById("countdown-text-mobile").classList.remove("is-skeleton");
                 document.getElementById("settings-button").classList.remove("is-skeleton");
