@@ -34,7 +34,7 @@
                             <div class="level-left"></div>
                             <div class="level-right">
                                 <div class="level-item">
-                                    <button class="button">
+                                    <button id="settings-button" class="button is-skeleton">
                                         <span class="icon is-small">
                                             <i class="fas fa-gear">
                                             </i>
@@ -53,6 +53,7 @@
                 document.getElementById("countdown-text").classList.add("has-text-primary-bold");
                 document.getElementById("heading").classList.remove("is-skeleton");
                 document.getElementById("countdown-text").classList.remove("is-skeleton");
+                document.getElementById("settings-button").classList.remove("is-skeleton");
             }, 3000);
         </script>
     </body>
