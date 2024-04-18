@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Countdown</title>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-</head>
-<body>
-    <!-- <i id="settings" class="settings fa-solid fa-gear" aria-label="Settings" role="button" title="Settings"></i>
+    <head>
+        <title>Countdown</title>
+        <script src="script.js" defer></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"
+            integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" />
+    </head>
+    <body>
+        <!-- <i id="settings" class="settings fa-solid fa-gear" aria-label="Settings" role="button" title="Settings"></i>
     <main class="container">
         <h1 class="caption">Loading...</h1>
         <div class="countdown">
             <p class="element">Loading...</p>
         </div>
     </main> -->
-    <section class="hero is-fullheight">
-        <main class="hero-body">
-            <div class="container is-link">
-                <div class="box is">
-                    <div class="block">
-                        <h1 class="title is-1">Loading...</h1>
-                    </div>
-                    <div class="block">
-                        <p>Loading...</p>
+        <section class="hero is-fullheight is-primary">
+            <main class="hero-body">
+                <div class="container has-text-centered is-max-desktop">
+                    <div class="box has-background-primary-soft has-text-primary-bold">
+                        <div class="block">
+                            <h1 id="heading" class="title is-1 is-skeleton">
+                                Countdown until the New Year
+                            </h1>
+                            <!-- has-text-primary-bold -->
+                        </div>
+                        <div class="block">
+                            <h3 id="countdown-text" class="subtitle is-3 is-skeleton">
+                                It hasn't happened yet!
+                            </h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
-    </section>
-</body>
+            </main>
+        </section>
+        <script>
+            setTimeout(() => {
+                document.getElementById("heading").classList.add("has-text-primary-bold");
+                document.getElementById("countdown-text").classList.add("has-text-primary-bold");
+                document.getElementById("heading").classList.remove("is-skeleton");
+                document.getElementById("countdown-text").classList.remove("is-skeleton");
+            }, 3000);
+        </script>
+    </body>
 </html>
