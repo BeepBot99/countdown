@@ -1,58 +1,59 @@
-let params = new URL(document.location.toString()).searchParams;
 
-let caption = params.get('caption');
-let showcaption = params.get('showcaption');
-let endtime = params.get('endtime');
-let endmessage = params.get('endmessage');
-let icon = params.get('icon');
-let title = params.get('title');
+// const params = new URL(document.location.toString()).searchParams;
 
-document.getElementById('caption').value = caption;
-document.getElementById('showcaption').checked = true;
-document.getElementById('endtime').value = endtime;
-document.getElementById('endmessage').value = endmessage
-document.getElementById('icon').value = icon;
-document.getElementById('title').value = title;
+// let caption = params.get('caption');
+// let showcaption = params.get('showcaption');
+// let endtime = params.get('endtime');
+// let endmessage = params.get('endmessage');
+// let icon = params.get('icon');
+// let title = params.get('title');
 
-if (showcaption == 'false') {
-    document.getElementById('showcaption').checked = false;
-}
+// document.getElementById('caption').value = caption;
+// document.getElementById('showcaption').checked = true;
+// document.getElementById('endtime').value = endtime;
+// document.getElementById('endmessage').value = endmessage
+// document.getElementById('icon').value = icon;
+// document.getElementById('title').value = title;
 
-function updateURL() {
-    let caption = document.getElementById('caption').value;
-    let showcaption = document.getElementById('showcaption').checked;
-    let endtime = document.getElementById('endtime').value;
-    let endmessage = document.getElementById('endmessage').value;
-    let icon = document.getElementById('icon').value;
-    let title = document.getElementById('title').value;
+// if (showcaption == 'false') {
+//     document.getElementById('showcaption').checked = false;
+// }
 
-    document.getElementById('url').value = `https://projects.mesure.x10.mx/countdown/?caption=${caption}&showcaption=${showcaption}&endtime=${endtime}&endmessage=${endmessage}&icon=${icon}&title=${title}`;
-}
+// function updateURL() {
+//     let caption = document.getElementById('caption').value;
+//     let showcaption = document.getElementById('showcaption').checked;
+//     let endtime = document.getElementById('endtime').value;
+//     let endmessage = document.getElementById('endmessage').value;
+//     let icon = document.getElementById('icon').value;
+//     let title = document.getElementById('title').value;
 
-updateURL();
+//     document.getElementById('url').value = `https://projects.mesure.x10.mx/countdown/?caption=${caption}&showcaption=${showcaption}&endtime=${endtime}&endmessage=${endmessage}&icon=${icon}&title=${title}`;
+// }
 
-document.addEventListener('keyup', () => updateURL());
-document.addEventListener('click', () => updateURL());
+// updateURL();
 
-function copy() {
-    let urlElement = document.getElementById("url");
+// document.addEventListener('keyup', () => updateURL());
+// document.addEventListener('click', () => updateURL());
 
-    urlElement.select();
-    urlElement.setSelectionRange(0, 99999);
+// function copy() {
+//     let urlElement = document.getElementById("url");
 
-    navigator.clipboard.writeText(urlElement.value);
+//     urlElement.select();
+//     urlElement.setSelectionRange(0, 99999);
 
-    document.getElementById('copy').innerText = 'Copied!';
-    setTimeout('document.getElementById("copy").innerText = "Copy";', 5000);
-}
+//     navigator.clipboard.writeText(urlElement.value);
 
-function current() {
-    let urlElement = document.getElementById("url");
+//     document.getElementById('copy').innerText = 'Copied!';
+//     setTimeout('document.getElementById("copy").innerText = "Copy";', 5000);
+// }
 
-    window.location.href = urlElement.value;
-}
+// function current() {
+//     let urlElement = document.getElementById("url");
 
-function newtab() {
-    let urlElement = document.getElementById("url");
-    window.open(urlElement.value, '_blank').focus();
-}
+//     window.location.href = urlElement.value;
+// }
+
+// function newtab() {
+//     let urlElement = document.getElementById("url");
+//     window.open(urlElement.value, '_blank').focus();
+// }
