@@ -1,37 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Countdown</title>
-        <script src="script.js" defer></script>
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"
-            integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK"
-            crossorigin="anonymous" />
+        <script src="./js/script.js" defer></script>
+        <script src="./js/fontawesome.min.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <link rel="stylesheet" href="./css/fontawesome.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     </head>
     <body>
-        <!-- <i id="settings" class="settings fa-solid fa-gear" aria-label="Settings" role="button" title="Settings"></i>
-    <main class="container">
-        <h1 class="caption">Loading...</h1>
-        <div class="countdown">
-            <p class="element">Loading...</p>
-        </div>
-    </main> -->
         <section class="hero is-fullheight is-primary">
+            <header class="hero-head">
+                <div class="notification is-primary-dark is-radiusless has-text-centered is-hidden-tablet">
+                        <h1 id="heading-mobile" class="title is-skeleton">
+                            Countdown until the New Year
+                        </h1>
+                </div>
+            </header>
             <main class="hero-body">
                 <div class="container has-text-centered is-max-desktop">
                     <div class="box has-background-primary-soft has-text-primary-bold">
-                        <div class="block">
+                        <div class="block is-hidden-mobile">
                             <h1 id="heading" class="title is-skeleton">
                                 Countdown until the New Year
                             </h1>
-                            <!-- has-text-primary-bold -->
                         </div>
                         <div class="block">
-                            <h2 id="countdown-text" class="subtitle is-skeleton">
+                            <h2 id="countdown-text" class="subtitle is-skeleton is-hidden-mobile">
                                 It hasn't happened yet!
                             </h2>
+                            <h2 id="countdown-text-mobile" class="subtitle is-skeleton is-3 is-hidden-tablet">
+                                It hasn't happened yet!
+                            </h2>
+                        </div>
+                        <div class="level is-mobile">
+                            <div class="level-left"></div>
+                            <div class="level-right">
+                                <div class="level-item">
+                                    <button aria-label="settings, customize countdown" id="settings-button" class="button is-skeleton">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-gear">
+                                            </i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -39,10 +55,10 @@
         </section>
         <script>
             setTimeout(() => {
-                document.getElementById("heading").classList.add("has-text-primary-bold");
-                document.getElementById("countdown-text").classList.add("has-text-primary-bold");
-                document.getElementById("heading").classList.remove("is-skeleton");
-                document.getElementById("countdown-text").classList.remove("is-skeleton");
+                $("#heading, #heading-mobile, #countdown-text, #countdown-text-mobile")
+                    .addClass("has-text-primary-bold")
+                    .removeClass("is-skeleton");
+                $("#settings-button").removeClass("is-skeleton");
             }, 3000);
         </script>
     </body>
