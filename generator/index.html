@@ -50,7 +50,28 @@
         <main class="hero-body">
             <div class="container has-text-centered is-max-desktop">
                 <div class="box has-background-primary-soft has-text-primary-bold">
-                    yo
+                    <form action="../" method="get">
+                        <div class="field has-addons">
+                            <label for="caption" class="label">Caption</label>
+                            <p class="control">
+                                <a href="javascript:void()" class="button is-static">
+                                    Countdown
+                                </a>
+                            </p>
+                            <p class="control">
+                                <span class="select">
+                                    <select name="preposition">
+                                        <option value="until">until</option>
+                                        <option value="to">to</option>
+                                        <option value="for">for</option>
+                                    </select>
+                                </span>
+                            </p>
+                            <p class="control is-expanded">
+                                <input type="text" name="caption" id="caption">
+                            </p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </main>
