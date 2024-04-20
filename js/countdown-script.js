@@ -1,4 +1,4 @@
-$("#hide-caption").click(function() {
+$("#hide-caption").click(function () {
     $("#caption-field, #caption-message")[this.checked ? "hide" : "show"]();
 });
 
