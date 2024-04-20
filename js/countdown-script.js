@@ -1,6 +1,19 @@
 $("#hide-caption").on("click", function () {
     $("#caption, #preposition").prop("disabled", this.checked ? "disabled" : "");
 });
+const calendarOptions = {
+    type: "datetime",
+    displayMode: "dialog",
+    showHeader: false,
+    enableYearSwitch: false,
+    enableMonthSwitch: false,
+    minuteSteps: 1,
+    closeOnSelect: true,
+    cancelLabel: "Cancel",
+    validateLabel: "Select",
+    color: "link"
+};
+bulmaCalendar.attach("#end-date", calendarOptions);
 
 // const params = new URL(document.location.toString()).searchParams;
 
