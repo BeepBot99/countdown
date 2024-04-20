@@ -7,6 +7,7 @@
         <script src="../js/jquery.min.js"></script>
         <link rel="stylesheet" href="../css/fontawesome.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" />
+        <link rel="stylesheet" href="../css/bulma-checkbox.min.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charset="UTF-8" />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -50,13 +51,15 @@
             <main class="hero-body">
                 <div class="container is-max-desktop">
                     <div class="box has-background-primary-soft has-text-primary-bold">
-                        <h1 class="title has-text-centered">Countdown Creator</h1>
+                        <h1 class="title has-text-centered has-text-primary-bold">
+                            Countdown Creator
+                        </h1>
                         <form action="../" method="get">
                             <!-- Caption Input -->
                             <div class="field">
                                 <label for="caption" class="label">Caption</label>
                                 <div class="control">
-                                    <div class="field has-addons" id="caption-field">
+                                    <div class="field has-addons">
                                         <p class="control">
                                             <a href="javascript:void()" class="button is-static">
                                                 Countdown
@@ -64,7 +67,7 @@
                                         </p>
                                         <p class="control">
                                             <span class="select">
-                                                <select name="preposition">
+                                                <select name="preposition" id="preposition">
                                                     <option value="until">until</option>
                                                     <option value="to">to</option>
                                                     <option value="for">for</option>
@@ -81,19 +84,18 @@
                                         </p>
                                     </div>
                                 </div>
-                                <p class="help" id="caption-message">
-                                    This is displayed above the countdown.
-                                </p>
+                                <p class="help">This is displayed above the countdown.</p>
                             </div>
                             <!-- Hide Caption Checkbox -->
                             <div class="field">
                                 <div class="control">
-                                    <label for="hide-caption" class="checkbox">
+                                    <label for="hide-caption" class="b-checkbox checkbox">
                                         <input
                                             type="checkbox"
                                             name="hide-caption"
                                             id="hide-caption" />
-                                        Hide Caption
+                                        <span class="check"></span>
+                                        <span class="control-label">Hide Caption</span>
                                     </label>
                                 </div>
                             </div>

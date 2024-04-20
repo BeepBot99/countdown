@@ -1,5 +1,5 @@
-$("#hide-caption").click(function () {
-    $("#caption-field, #caption-message")[this.checked ? "hide" : "show"]();
+$("#hide-caption").on("click", function () {
+    $("#caption, #preposition").prop("disabled", this.checked ? "disabled" : "");
 });
 
 // const params = new URL(document.location.toString()).searchParams;
