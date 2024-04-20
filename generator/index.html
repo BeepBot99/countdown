@@ -90,7 +90,7 @@
                             </div>
                             <!-- Hide Caption Checkbox -->
                             <div class="field">
-                                <div class="control">
+                                <p class="control">
                                     <label for="hide-caption" class="b-checkbox checkbox">
                                         <input
                                             type="checkbox"
@@ -99,12 +99,28 @@
                                         <span class="check is-link"></span>
                                         <span class="control-label">Hide Caption</span>
                                     </label>
-                                </div>
+                                </p>
                             </div>
+                            <!-- End Date Selector -->
                             <div class="field">
                                 <label for="end-date" class="label">End Date</label>
-                                <input type="date" name="end-date" id="end-date" />
+                                <p class="control">
+                                    <input type="date" name="end-date" id="end-date" />
+                                </p>
                                 <p class="help">When your countdown ends</p>
+                            </div>
+                            <!-- End Message Input -->
+                            <div class="field">
+                                <label for="end-message" class="label">End Message</label>
+                                <p class="control">
+                                    <input
+                                        type="text"
+                                        name="end-message"
+                                        id="end-message"
+                                        class="input"
+                                        placeholder="It's a new year!" />
+                                </p>
+                                <span class="help">Shown after your countdown ends.</span>
                             </div>
                         </form>
                     </div>
