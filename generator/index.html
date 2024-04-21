@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="light">
+<html data-theme="light" lang="en">
     <head>
         <title>Countdown Creator</title>
         <script src="../js/countdown-script.js" defer></script>
@@ -71,7 +71,10 @@
                                         </p>
                                         <p class="control">
                                             <span class="select">
-                                                <select name="preposition" id="preposition">
+                                                <select
+                                                    name="preposition"
+                                                    id="preposition"
+                                                    title="Preposition">
                                                     <option value="until">until</option>
                                                     <option value="to">to</option>
                                                     <option value="for">for</option>
@@ -123,6 +126,98 @@
                                         placeholder="It's a new year!" />
                                 </p>
                                 <span class="help">Shown after your countdown ends.</span>
+                            </div>
+                            <!-- Page Icon "Radio" Buttons -->
+                            <div class="field">
+                                <label for="party-icon-button" class="label">Page Icon</label>
+                                <div class="control">
+                                    <div class="buttons has-addons">
+                                        <button id="party-icon-button" type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined">celebration</i>
+                                            </p>
+                                        </button>
+                                        <button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined">pin</i>
+                                            </p>
+                                        </button>
+                                        <button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined">alarm</i>
+                                            </p>
+                                        </button>
+                                        <button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined">timer</i>
+                                            </p>
+                                        </button>
+                                        <button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined">hourglass</i>
+                                            </p>
+                                        </button>
+                                        <button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined"
+                                                    >hourglass_bottom</i
+                                                >
+                                            </p></button
+                                        ><button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined"
+                                                    >hourglass_top</i
+                                                >
+                                            </p></button
+                                        ><button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined">cake</i>
+                                            </p></button
+                                        ><button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined">liquor</i>
+                                            </p></button
+                                        ><button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined">wine_bar</i>
+                                            </p>
+                                        </button>
+                                        <button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined">person_play</i>
+                                            </p>
+                                        </button>
+                                        <button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined">done</i>
+                                            </p></button
+                                        ><button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined"
+                                                    >check_circle</i
+                                                >
+                                            </p></button
+                                        ><button type="button" class="button">
+                                            <p class="icon">
+                                                <i class="material-symbols-outlined"
+                                                    >featured_seasonal_and_gifts</i
+                                                >
+                                            </p>
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="help">Shown in your browser tab</p>
+                            </div>
+                            <!-- Page Title Input -->
+                            <div class="field">
+                                <label for="page-title" class="label">Page Title</label>
+                                <input
+                                    type="text"
+                                    name="page-title"
+                                    id="page-title"
+                                    class="input"
+                                    placeholder="Countdown to the New Year" />
+                                <p class="help">Shown next to the icon, in your browser tab</p>
                             </div>
                         </form>
                     </div>
