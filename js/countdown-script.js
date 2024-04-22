@@ -17,9 +17,13 @@ const calendarOptions = {
 bulmaCalendar.attach("#end-date", calendarOptions);
 
 $("#copy-button").on("click", function () {
-    $(this).text("Copied!");
+    $(this).html(
+        '<span class="icon-text"><span>Copied!</span><i class="material-symbols-outlined">done</i></span>'
+    );
     setTimeout(() => {
-        $(this).html("Copy link to clipboard");
+        $(this).html(
+            '<span class="icon-text"><span>Copy link to clipboard</span><i class="material-symbols-outlined">content_copy</i></span>'
+        );
     }, 3000);
 });
 
