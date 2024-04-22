@@ -1,3 +1,23 @@
+function fallbackCopyTextToClipboard(text) {
+    const textArea = $("<textarea>")
+        .val(text)
+        .css("top", "0")
+        .css("left", "0")
+        .css("position", "fixed")
+        .appendTo("body")
+        .focus()
+        .select();
+    document.execCommand("copy");
+    textArea.remove();
+  }
+  function copyTextToClipboard(text) {
+    if (!navigator.clipboard) {
+      fallbackCopyTextToClipboard(text);
+      return;
+    }
+    navigator.clipboard.writeText(text);
+  }
+
 $("#hide-caption").on("click", function () {
     $("#caption, #preposition").prop("disabled", this.checked ? "disabled" : "");
 });
@@ -17,6 +37,7 @@ const calendarOptions = {
 bulmaCalendar.attach("#end-date", calendarOptions);
 
 $("#copy-button").on("click", function () {
+    copyTextToClipboard();
     $(this).html(
         '<span class="icon-text"><span>Copied!</span><i class="material-symbols-outlined">done</i></span>'
     );
