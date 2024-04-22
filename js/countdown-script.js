@@ -1,22 +1,26 @@
-function fallbackCopyTextToClipboard(text) {
-    const textArea = $("<textarea>")
-        .val(text)
-        .css("top", "0")
-        .css("left", "0")
-        .css("position", "fixed")
-        .appendTo("body")
-        .focus()
-        .select();
-    document.execCommand("copy");
-    textArea.remove();
-  }
-  function copyTextToClipboard(text) {
+function copyTextToClipboard(text) {
+    function fallbackCopyTextToClipboard(text) {
+        const textArea = $("<textarea>")
+            .val(text)
+            .css("top", "0")
+            .css("left", "0")
+            .css("position", "fixed")
+            .appendTo("body")
+            .focus()
+            .select();
+        document.execCommand("copy");
+        textArea.remove();
+      }
     if (!navigator.clipboard) {
       fallbackCopyTextToClipboard(text);
       return;
     }
     navigator.clipboard.writeText(text);
-  }
+}
+
+function createGETUri() {
+    
+}
 
 $("#hide-caption").on("click", function () {
     $("#caption, #preposition").prop("disabled", this.checked ? "disabled" : "");
@@ -81,8 +85,8 @@ $("#copy-button").on("click", function () {
 
 // updateURL();
 
-// document.addEventListener('keyup', () => updateURL());
-// document.addEventListener('click', () => updateURL());
+// document.addEventListener('keyup', updateURL);
+// document.addEventListener('click', updateURL);
 
 // function copy() {
 //     let urlElement = document.getElementById("url");
