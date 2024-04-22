@@ -26,6 +26,10 @@ $("#hide-caption").on("click", function () {
     $("#caption, #preposition").prop("disabled", this.checked ? "disabled" : "");
 });
 
+$("form").submit(() => {
+    $("#preposition, #caption").remove();
+})
+
 const calendarOptions = {
     type: "datetime",
     displayMode: "dialog",
