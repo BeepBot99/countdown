@@ -10,17 +10,15 @@ function copyTextToClipboard(text) {
             .select();
         document.execCommand("copy");
         textArea.remove();
-      }
+    }
     if (!navigator.clipboard) {
-      fallbackCopyTextToClipboard(text);
-      return;
+        fallbackCopyTextToClipboard(text);
+        return;
     }
     navigator.clipboard.writeText(text);
 }
 
-function createGETUri() {
-    
-}
+function createGETUri() {}
 
 $("#hide-caption").on("click", function () {
     $("#caption, #preposition").prop("disabled", this.checked ? "disabled" : "");
@@ -31,7 +29,7 @@ $("form").submit(function (e) {
     $("#preposition, #caption").remove();
     this.submit();
     location.reload(true);
-})
+});
 
 const calendarOptions = {
     type: "datetime",
