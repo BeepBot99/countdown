@@ -23,7 +23,7 @@
                         <h1 class="title has-text-centered has-text-primary-bold">
                             Countdown Creator
                         </h1>
-                        <form action="../" method="get">
+                        <form action="../" method="get" oninput="$(captionFull).val(`Countdown ${$(preposition).val()} ${$(caption).val()}`)">
                             <!-- Caption Input -->
                             <div class="field">
                                 <label for="caption" class="label">Caption</label>
@@ -64,7 +64,7 @@
                                     <label for="hide-caption" class="b-checkbox checkbox">
                                         <input
                                             type="checkbox"
-                                            name="hide-caption"
+                                            name="hideCaption"
                                             id="hide-caption" />
                                         <span class="check is-link"></span>
                                         <span class="control-label">Hide Caption</span>
@@ -75,7 +75,7 @@
                             <div class="field">
                                 <label for="end-date" class="label">End Date</label>
                                 <p class="control">
-                                    <input type="date" name="end-date" id="end-date" />
+                                    <input type="date" name="endDate" id="end-date" />
                                 </p>
                                 <p class="help">When your countdown ends</p>
                             </div>
@@ -85,7 +85,7 @@
                                 <p class="control">
                                     <input
                                         type="text"
-                                        name="end-message"
+                                        name="endMessage"
                                         id="end-message"
                                         class="input"
                                         placeholder="It's a new year!" />
@@ -178,12 +178,15 @@
                                 <label for="page-title" class="label">Page Title</label>
                                 <input
                                     type="text"
-                                    name="page-title"
+                                    name="pageTitle"
                                     id="page-title"
                                     class="input"
                                     placeholder="Countdown to the New Year" />
                                 <p class="help">Shown next to the icon, in your browser tab</p>
                             </div>
+                            <!-- Hidden Inputs -->
+                            <input type="hidden" name="captionFull" id="caption-full">
+                            <input type="hidden" name="pageIcon" id="page-icon-input">
                             <!-- Submit Buttons -->
                             <div class="field is-grouped is-grouped-multiline is-grouped-centered">
                                 <p class="control">
