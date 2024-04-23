@@ -41,7 +41,7 @@ const calendarOptions = {
 bulmaCalendar.attach("#end-date", calendarOptions);
 
 $("#copy-button").on("click", function () {
-    copyTextToClipboard($("form").prop("action")+$("form").serialize());
+    copyTextToClipboard(`${$("form").prop("action")}?${$("form").serialize()}`);
     $(this).html(
         '<span class="icon-text"><span>Copied!</span><i class="material-symbols-outlined">done</i></span>'
     );
