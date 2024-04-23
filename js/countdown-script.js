@@ -24,11 +24,8 @@ $("#hide-caption").on("click", function () {
     $("#caption, #preposition").prop("disabled", this.checked ? "disabled" : "");
 });
 
-$("form").submit(function (e) {
-    e.preventDefault();
+$("form").submit(() => {
     $("#preposition, #caption").remove();
-    this.submit();
-    location.reload(true);
 });
 
 const calendarOptions = {
