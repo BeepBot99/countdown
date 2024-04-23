@@ -25,7 +25,7 @@ $("#hide-caption").on("click", function () {
 });
 
 $("form").submit(() => {
-    $("#preposition, #caption").remove();
+    $("#preposition, #caption").removeAttr("name");
 });
 
 const calendarOptions = {
