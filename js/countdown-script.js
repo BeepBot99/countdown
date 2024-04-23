@@ -18,8 +18,6 @@ function copyTextToClipboard(text) {
     navigator.clipboard.writeText(text);
 }
 
-function createGETUri() {}
-
 $("#hide-caption").on("click", function () {
     $("#caption, #preposition").prop("disabled", this.checked ? "disabled" : "");
 });
@@ -43,7 +41,7 @@ const calendarOptions = {
 bulmaCalendar.attach("#end-date", calendarOptions);
 
 $("#copy-button").on("click", function () {
-    copyTextToClipboard();
+    copyTextToClipboard($("form").prop("action")+$("form").serialize());
     $(this).html(
         '<span class="icon-text"><span>Copied!</span><i class="material-symbols-outlined">done</i></span>'
     );
