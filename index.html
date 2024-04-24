@@ -17,7 +17,7 @@
             <header class="hero-head">
                 <div
                     class="notification is-primary-dark is-radiusless has-text-centered is-hidden-tablet">
-                    <h2 id="heading-mobile" class="title is-skeleton">
+                    <h2 id="heading-mobile" class="title has-text-primary-bold">
                         Countdown until the New Year
                     </h2>
                 </div>
@@ -26,17 +26,17 @@
                 <div class="container has-text-centered is-max-desktop">
                     <div class="box has-background-primary-soft has-text-primary-bold">
                         <div class="block is-hidden-mobile">
-                            <h1 id="heading" class="title is-skeleton">
-                                Countdown until the New Year
-                            </h1>
+                            <h1 id="heading" class="title has-text-primary-bold">Countdown</h1>
                         </div>
                         <div class="block">
-                            <h2 id="countdown-text" class="subtitle is-skeleton is-hidden-mobile">
+                            <h2
+                                id="countdown-text"
+                                class="subtitle has-text-primary-bold is-hidden-mobile">
                                 It hasn't happened yet!
                             </h2>
                             <h2
                                 id="countdown-text-mobile"
-                                class="subtitle is-skeleton is-3 is-hidden-tablet">
+                                class="subtitle has-text-primary-bold is-3 is-hidden-tablet">
                                 It hasn't happened yet!
                             </h2>
                         </div>
@@ -47,7 +47,7 @@
                                     <a
                                         aria-label="settings, customize countdown"
                                         id="settings-button"
-                                        class="button is-skeleton"
+                                        class="button"
                                         type="button"
                                         href="./generator">
                                         <span class="icon is-small">
@@ -62,12 +62,12 @@
             </main>
         </section>
         <script>
-            setTimeout(() => {
-                $("#heading, #heading-mobile, #countdown-text, #countdown-text-mobile")
-                    .addClass("has-text-primary-bold")
-                    .removeClass("is-skeleton");
-                $("#settings-button").removeClass("is-skeleton");
-            }, 3000);
+            // setTimeout(() => {
+            //     $("#heading, #heading-mobile, #countdown-text, #countdown-text-mobile")
+            //         .addClass("has-text-primary-bold")
+            //         .removeClass("");
+            //     $("#settings-button").removeClass("");
+            // }, 3000);
         </script>
     </body>
 </html>

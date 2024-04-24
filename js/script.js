@@ -9,7 +9,7 @@ const fillers = {
     endMessage: params.get("endMessage") || "The countdown has ended.",
     icon: params.get("pageIcon") || "timer",
     title: params.get("pageTitle") || "Countdown"
-}
+};
 
 // Using query parameters
 $("#heading, #heading-mobile").text(fillers.caption);
@@ -18,9 +18,7 @@ document.title = fillers.title;
 $("link[rel='shortcut icon']").prop("href", fillers.icon);
 
 const countDownDate = new Date(fillers.endTime);
-
-// Update the countdown every 1 second
-const timerInterval = setInterval(() => {
+function updateTimer() {
     // Get the current date and time
     const now = new Date();
     // Find the distance between now and the count down date
@@ -48,4 +46,7 @@ const timerInterval = setInterval(() => {
         clearInterval(timerInterval);
         $("#countdown-text, #countdown-text-mobile").text(fillers.endMessage);
     }
-}, 1000);
+}
+updateTimer();
+// Update the countdown every 1 second
+const timerInterval = setInterval(updateTimer, 1000);
