@@ -27,7 +27,10 @@ $("form").submit(() => {
 });
 
 $("#copy-button").on("click", function () {
+    $("#preposition, #caption").removeAttr("name");
     copyTextToClipboard(`${$("form").prop("action")}?${$("form").serialize()}`);
+    $("#preposition").attr("name", "preposition");
+    $("#caption").attr("name", "caption");
     $(this).html(
         '<span class="icon-text"><span>Copied!</span><i class="material-symbols-outlined">done</i></span>'
     );
