@@ -1,6 +1,3 @@
-// Defining variables and elements
-const countdown = $("#countdown-text, #countdown-text-mobile");
-
 // Dealing with query parameters
 const params = new URL(document.location.toString()).searchParams;
 if (!params.get("endDate")) location.replace("./generator");
@@ -49,6 +46,6 @@ const timerInterval = setInterval(() => {
     // If the countdown is finished, stop the timer and display it to the user.
     if (distanceBetween < 0) {
         clearInterval(timerInterval);
-        countdownElement.text(fillers.endMessage);
+        $("#countdown-text, #countdown-text-mobile").text(fillers.endMessage);
     }
 }, 1000);
