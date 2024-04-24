@@ -47,7 +47,7 @@ const timerInterval = setInterval(() => {
     countdown.text(`${days}d ${hours}h ${minutes}m ${seconds}s`);
 
     // If the countdown is finished, stop the timer and display it to the user.
-    if (distance < 0) {
+    if (distanceBetween < 0) {
         clearInterval(timerInterval);
         countdownElement.text(fillers.endMessage);
     }
