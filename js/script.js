@@ -41,7 +41,7 @@ const timerInterval = setInterval(() => {
     }
 
     // Display the result to the user
-    countdown.text(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+    $("#countdown-text, #countdown-text-mobile").text(`${days}d ${hours}h ${minutes}m ${seconds}s`);
 
     // If the countdown is finished, stop the timer and display it to the user.
     if (distanceBetween < 0) {
