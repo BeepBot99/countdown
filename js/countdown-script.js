@@ -39,6 +39,9 @@ $("#copy-button").on("click", function () {
 });
 
 $(".icon-select-button").on("click", function () {
+    alert($(this)
+    .find("i.material-symbols-outlined")
+    .text());
     $("#page-icon-input").val(
         $(this)
             .find("i.material-symbols-outlined")
