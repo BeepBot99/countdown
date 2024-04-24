@@ -12,13 +12,11 @@ const fillers = {
 
 $("#heading, #heading-mobile").text(fillers.caption);
 
-const countdownElement = document.getElementById('element');
+const countdown = $("#countdown-text, #countdown-text-mobile");
 
-if (showcaption == 'false') {
-    document.getElementById('caption').style.display = 'none';
-}
+if (hideCaption) $("#heading, #heading-mobile").hide();
 
-document.title = title;
+document.title = fillers.title;
 
 var link = document.querySelector("link[rel~='icon']");
 if (!link) {
