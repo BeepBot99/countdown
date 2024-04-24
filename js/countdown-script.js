@@ -42,6 +42,12 @@ $("#copy-button").on("click", function () {
 });
 
 $(".icon-select-button").on("click", function () {
+    $(".icon-select-button")
+        .removeClass("is-info")
+        .removeClass("is-selected");
+    $(this)
+        .addClass("is-info")
+        .addClass("is-selected");
     $("#page-icon-input").val(
         $(this)
             .find("i.material-symbols-outlined")
