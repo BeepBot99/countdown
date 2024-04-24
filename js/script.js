@@ -1,9 +1,9 @@
 const params = new URL(document.location.toString()).searchParams;
-if (!params.get("endTime")) location.replace("./generator");
+if (!params.get("endDate")) location.replace("./generator");
 
 const fillers = {
     caption: params.get("captionFull") || "Countdown",
-    hideCaption: params.get("hidecaption") || false,
+    hideCaption: params.get("hideCaption") || false,
     endTime: params.get("endDate"),
     endMessage: params.get("endMessage") || "The countdown has ended.",
     icon: params.get("pageIcon") || "timer",
