@@ -26,6 +26,26 @@ $("form").submit(() => {
     $("#preposition, #caption").removeAttr("name");
 });
 
+$("#copy-button").on("click", function () {
+    copyTextToClipboard(`${$("form").prop("action")}?${$("form").serialize()}`);
+    $(this).html(
+        '<span class="icon-text"><span>Copied!</span><i class="material-symbols-outlined">done</i></span>'
+    );
+    setTimeout(() => {
+        $(this).html(
+            '<span class="icon-text"><span>Copy link to clipboard</span><i class="material-symbols-outlined">content_copy</i></span>'
+        );
+    }, 3000);
+});
+
+$(".icon-select-button").on("click", function () {
+    $("#page-icon-input").val(
+        $(this)
+            .find("i.material-symbols-outlined")
+            .text()
+    );
+});
+
 const calendarOptions = {
     type: "datetime",
     displayMode: "dialog",
@@ -39,18 +59,6 @@ const calendarOptions = {
 };
 
 bulmaCalendar.attach("#end-date", calendarOptions);
-
-$("#copy-button").on("click", function () {
-    copyTextToClipboard(`${$("form").prop("action")}?${$("form").serialize()}`);
-    $(this).html(
-        '<span class="icon-text"><span>Copied!</span><i class="material-symbols-outlined">done</i></span>'
-    );
-    setTimeout(() => {
-        $(this).html(
-            '<span class="icon-text"><span>Copy link to clipboard</span><i class="material-symbols-outlined">content_copy</i></span>'
-        );
-    }, 3000);
-});
 
 // const params = new URL(document.location.toString()).searchParams;
 
