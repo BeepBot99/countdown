@@ -68,3 +68,7 @@ const calendarOptions = {
 };
 
 bulmaCalendar.attach("#end-date", calendarOptions);
+
+function handleFormInput() {
+    
+}

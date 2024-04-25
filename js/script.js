@@ -10,7 +10,7 @@ const fillers = {
     icon: params.get("pageIcon") || "timer",
     title: params.get("pageTitle") || "Countdown"
 };
-localStorage.setItem("fillers", fillers);
+localStorage.setItem("fillers", JSON.stringify(fillers));
 
 // Using query parameters
 $("#heading, #heading-mobile").text(fillers.caption);

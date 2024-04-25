@@ -23,7 +23,7 @@
                         <h1 class="title has-text-centered has-text-primary-bold">
                             Countdown Creator
                         </h1>
-                        <form action="../" method="get" oninput="$(captionFull).val(`Countdown ${$(preposition).val()} ${$(caption).val()}`)">
+                        <form action="../" method="get" oninput="$(captionFull).val(`Countdown ${$(preposition).val()} ${$(caption).val()}`);handleFormInput()">
                             <!-- Caption Input -->
                             <div class="field">
                                 <label for="caption" class="label">Caption</label>
@@ -33,7 +33,7 @@
                                             <a href="javascript:void()" class="button is-static">
                                                 Countdown
                                             </a>
-                                        </p>
+                                        </p>z
                                         <p class="control">
                                             <span class="select">
                                                 <select
