@@ -44,7 +44,7 @@ function updateTimer() {
 
     // If the countdown is finished, stop the timer and display it to the user.
     if (distanceBetween < 0) {
-        if (timerInterval) clearInterval(timerInterval);
+        if (typeof timerInterval !== "undefined") clearInterval(timerInterval);
         $("#countdown-text, #countdown-text-mobile").text(fillers.endMessage);
     }
 }
