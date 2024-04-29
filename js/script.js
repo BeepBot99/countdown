@@ -3,16 +3,34 @@ const params = new URL(document.location.toString()).searchParams;
 const storedParams = JSON.parse(localStorage.getItem("fillers")) || {};
 if (!params.get("endDate") && !storedParams.endDate) location.replace("./generator");
 
-// const fillers = _.
-const fillers =
-{
-    caption: params.get("captionFull") || storedParams.caption || "Countdown",
-    hideCaption: params.get("hideCaption") || storedParams.hideCaption || false,
-    endDate: params.get("endDate") || storedParams.endDate,
-    endMessage: params.get("endMessage") || storedParams.endMessage || "The countdown has ended.",
-    icon: params.get("pageIcon") || storedParams.icon || "timer",
-    title: params.get("pageTitle") || storedParams.title || "Countdown"
-};
+const fillers = _.defaults(
+    _.zipObject(
+        ["caption", "hideCaption", "endDate", "endMessage", "icon", "title"],
+        _.map(
+            ["captionFull", "hideCaption", "endDate", "endMessage", "pageIcon", "pageTitle"],
+            prop => params.get(prop)
+        )
+    ),
+    [
+        storedParams,
+        {
+            caption: "Countdown",
+            hideCaption: false,
+            endMessage: "The countdown has ended.",
+            icon: "timer",
+            title: "Countdown"
+        }
+    ]
+);
+// const fillers =
+// {
+//     caption: params.get("captionFull") || storedParams.caption || "Countdown",
+//     hideCaption: params.get("hideCaption") || storedParams.hideCaption || false,
+//     endDate: params.get("endDate") || storedParams.endDate,
+//     endMessage: params.get("endMessage") || storedParams.endMessage || "The countdown has ended.",
+//     icon: params.get("pageIcon") || storedParams.icon || "timer",
+//     title: params.get("pageTitle") || storedParams.title || "Countdown"
+// };
 localStorage.setItem("fillers", JSON.stringify(fillers));
 
 // Using query parameters
