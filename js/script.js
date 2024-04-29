@@ -33,12 +33,13 @@ const fillers = _.defaults(
 // };
 localStorage.setItem("fillers", JSON.stringify(fillers));
 
-// Using query parameters
+// Displaying query parameters
 $("#heading, #heading-mobile").text(fillers.caption);
 if (fillers.hideCaption) $("#heading, #heading-mobile").hide();
 document.title = fillers.title;
 $("link[rel='shortcut icon']").prop("href", fillers.icon);
 
+// Counting down
 const countDownDate = new Date(fillers.endDate);
 function updateTimer() {
     // Get the current date and time
