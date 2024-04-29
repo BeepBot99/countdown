@@ -1,14 +1,16 @@
 // Dealing with query parameters
 const params = new URL(document.location.toString()).searchParams;
-if (!params.get("endDate")) location.replace("./generator");
+const storedParams = JSON.parse(localStorage.getItem("params"));
+if (!(params.get("endDate") || storedParams.endTime)) location.replace("./generator");
 
-const fillers = {
-    caption: params.get("captionFull") || "Countdown",
-    hideCaption: params.get("hideCaption") || false,
-    endTime: params.get("endDate"),
-    endMessage: params.get("endMessage") || "The countdown has ended.",
-    icon: params.get("pageIcon") || "timer",
-    title: params.get("pageTitle") || "Countdown"
+const fillers =
+{
+    caption: params.get("captionFull") || storedParams.caption || "Countdown",
+    hideCaption: params.get("hideCaption") || storedParams.hideCaption || false,
+    endTime: params.get("endDate") || storedParams.endTime,
+    endMessage: params.get("endMessage") || storedParams.endMessage || "The countdown has ended.",
+    icon: params.get("pageIcon") || storedParams.icon || "timer",
+    title: params.get("pageTitle") || storedParams.title || "Countdown"
 };
 localStorage.setItem("fillers", JSON.stringify(fillers));
 
