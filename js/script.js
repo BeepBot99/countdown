@@ -1,13 +1,13 @@
 // Dealing with query parameters
 const params = new URL(document.location.toString()).searchParams;
 const storedParams = JSON.parse(localStorage.getItem("fillers"));
-if (!(params.get("endDate") || storedParams.endTime)) location.replace("./generator");
+if (!params.get("endDate") && !storedParams.endDate) location.replace("./generator");
 
 const fillers =
 {
     caption: params.get("captionFull") || storedParams.caption || "Countdown",
     hideCaption: params.get("hideCaption") || storedParams.hideCaption || false,
-    endTime: params.get("endDate") || storedParams.endTime,
+    endDate: params.get("endDate") || storedParams.endDate,
     endMessage: params.get("endMessage") || storedParams.endMessage || "The countdown has ended.",
     icon: params.get("pageIcon") || storedParams.icon || "timer",
     title: params.get("pageTitle") || storedParams.title || "Countdown"
@@ -20,7 +20,7 @@ if (fillers.hideCaption) $("#heading, #heading-mobile").hide();
 document.title = fillers.title;
 $("link[rel='shortcut icon']").prop("href", fillers.icon);
 
-const countDownDate = new Date(fillers.endTime);
+const countDownDate = new Date(fillers.endDate);
 function updateTimer() {
     // Get the current date and time
     const now = new Date();

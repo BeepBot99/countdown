@@ -1,3 +1,4 @@
+// Utility Function
 function copyTextToClipboard(text) {
     function fallbackCopyTextToClipboard(text) {
         const textArea = $("<textarea>")
@@ -18,6 +19,7 @@ function copyTextToClipboard(text) {
     navigator.clipboard.writeText(text);
 }
 
+// Event Listeners
 $("#hide-caption").on("click", function () {
     $("#caption, #preposition").prop("disabled", this.checked ? "disabled" : "");
 });
@@ -70,5 +72,5 @@ const calendarOptions = {
 bulmaCalendar.attach("#end-date", calendarOptions);
 
 function handleFormInput() {
-    
+
 }
