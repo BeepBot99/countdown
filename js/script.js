@@ -1,8 +1,9 @@
 // Dealing with query parameters
 const params = new URL(document.location.toString()).searchParams;
-const storedParams = JSON.parse(localStorage.getItem("fillers"));
+const storedParams = JSON.parse(localStorage.getItem("fillers")) || {};
 if (!params.get("endDate") && !storedParams.endDate) location.replace("./generator");
 
+// const fillers = _.
 const fillers =
 {
     caption: params.get("captionFull") || storedParams.caption || "Countdown",
